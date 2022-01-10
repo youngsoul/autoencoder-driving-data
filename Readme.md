@@ -33,6 +33,10 @@ Can we reduce the 250 features to a smaller number and still successfully drive 
 ```shell
 pip install sklearn tensorflow pandas matplotlib jupyter
 ```
+## Jupyter Notebook
+
+See the Jupyter Notebook for a more detailed walk through of what the scripts are doing.
+
 
 ## Running the Scripts
 
