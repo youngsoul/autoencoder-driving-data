@@ -1,3 +1,8 @@
+#
+# I no longer recall where I originally saw this example, but in compliance with the license you should know that
+# I have changed the original source material to meet my needs
+#
+
 # Copyright 2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 #
 # Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except
@@ -15,6 +20,7 @@ from curses import wrapper, use_default_colors, napms, curs_set, color_pair, ini
 road_centers = [0,2,3,3,2,0,-2,-3,-3,-2];
 training_csv = []
 car_pos = 0
+number_of_training_samples = 150
 
 def draw_road(screen):
     road_csv = []
@@ -51,7 +57,7 @@ def main(stdscr):
     stdscr.getch()
 
     stdscr.nodelay(True)
-    for i in range(150):
+    for i in range(number_of_training_samples):
         label = "1" # straight
         road_csv = draw_road(stdscr)
         napms(300)
@@ -70,7 +76,7 @@ def main(stdscr):
             car_pos+=1
             label = "2"
 
-        stdscr.addstr(len(road_centers)+1, 2, "User says: %s" % ["left    ", "straight", "right   "][int(label)])
+        stdscr.addstr(len(road_centers)+1, 2, "User  %s" % ["steer: left    ", "go: straight", "steer: right   "][int(label)])
         stdscr.refresh()
 
         road_csv.insert(0, label)

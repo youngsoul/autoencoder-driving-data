@@ -50,7 +50,7 @@ def main(min_dims, training_data):
     autoencoder = Sequential([encoder, decoder])
     autoencoder.compile(loss="mse", optimizer=SGD(learning_rate=0.1))
 
-    autoencoder.fit(X_scaled, X_scaled, epochs=300)
+    autoencoder.fit(X_scaled, X_scaled, epochs=500)
 
     losses = autoencoder.history.history
     pd.DataFrame(losses).plot()
