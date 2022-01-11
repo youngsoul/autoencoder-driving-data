@@ -33,6 +33,7 @@ Can we reduce the 250 features to a smaller number and still successfully drive 
 ```shell
 pip install sklearn tensorflow pandas matplotlib jupyter
 ```
+
 ## Jupyter Notebook
 
 See the Jupyter Notebook for a more detailed walk through of what the scripts are doing.
@@ -45,7 +46,10 @@ See the Jupyter Notebook for a more detailed walk through of what the scripts ar
 
 * Run `01_training.py` to collect training data.
 
-The shape of the data will be 150 rows by 251 features, where feature[0] is the target value.
+The shape of the data will be 150 rows by 250 features and 1 label that represents the driving instruction.
+
+Snapshots of the road configuration and the driving instruction are created and the road is flattened into a new sample.
+
 
 ---
 
@@ -68,6 +72,24 @@ Run `02_model_training.py` and provide the training data.  use the `--training-d
 * Drive by model
 
 Run `03_drive_by_model.py`.  If you want to use autoencoding, use the `--autoencode` option.  This will cause the script to read `encoder_scaler.pkl` and `encoder_model.h5` and use those during the simulated driving along with the `best_driving_model.sav`.
+
+## How does an AutoEncoder work?
+
+![AEWork](./images/autoencoder.png)
+
+An AutoEncoder, in this example, is a fully connect neural network.
+
+The raw driving sample are feed into the encoder neural network.  The output of the encoder neural network is a smaller number of nodes than the original input.
+
+The smaller number of encoder output nodes are fed into a decoder network that returns the number of outputs to match the inputs.  The difference between the original 250 samples and the decoded 250 samples is performed.  The loss will then inform the network how to update the weights of the network to reduce the loss.
+
+Ultimately the decoder is not used in this case.  It is only there to check that the smaller node representation contains as much information about the original input as possible in the smaller number of nodes.
+
+The encoder network is used to take the original 250 features, and reduce those down to 32.
+
+Those 32 features can then be used to train a traditional machine learning algorithm.
+
+![AEML](./images/encoder-ml.png)
 
 
 ## Results
