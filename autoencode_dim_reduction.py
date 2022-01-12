@@ -81,6 +81,9 @@ if __name__ == '__main__':
     mdims = args['min_dims']
     train_data = args['training_data']
 
+    print(f"Minimum Encoder Dimension: {mdims}")
+    print(f"Training Data File: training_{mdims}.csv")
+
     main(mdims, train_data)
 
 
