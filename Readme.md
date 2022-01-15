@@ -224,3 +224,10 @@ Original Road
 You will see it does a pretty good job, but struggles at certain points.
 
 ![DBAE](./images/drive_autoencoded.gif)
+
+
+## AWS SageMaker StudioLab
+
+If you are using SageMaker StudioLab use the ml_driving_env.yml to create a conda environment
+
+For more information on StudioLab Environment Management, see these [docs](https://docs.aws.amazon.com/sagemaker/latest/dg/studio-lab-use-manage.html)
