@@ -1,6 +1,6 @@
 #
 # I no longer recall where I originally saw this example, but in compliance with the license you should know that
-# I have changed the original source material to meet my needs
+# I have changed the original source material to meet my needs.
 #
 
 # Copyright 2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.

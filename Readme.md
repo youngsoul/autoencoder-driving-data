@@ -49,7 +49,7 @@ See the Jupyter Notebook for a more detailed walk through of what the scripts ar
 ---
 ### Collect Training Data
 
-* Run `01_training.py` to collect training data.
+* Run `01_collect_training_data.py` to collect training data.
 
 The shape of the data will be 150 rows by 250 features and 1 label that represents the driving instruction.
 
