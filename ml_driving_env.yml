@@ -1,3 +1,6 @@
+# To use:
+#   $ conda env create -f ml_driving_env.yml
+#   $ conda activate mldriving
 name: mldriving
 dependencies:
   - python=3.9
