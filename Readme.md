@@ -11,6 +11,11 @@ Can we train an '8-bit' car to drive?
 
 We are going to use a simple, but relatable, example to apply machine learning.  We are then going to see how we can use a more advanced concept called AutoEncoders to reduce the dimensionality ( i.e. reduce the number of columns that we use to train and predict ) to see if we can reduce the size of the data and still capture enough to drive.
 
+[![Open In Studio Lab](https://studiolab.sagemaker.aws/studiolab.svg)](https://studiolab.sagemaker.aws/import/github/youngsoul/autoencoder-driving-data/blob/master/OverviewNotebook.ipynb)
+
+
+
+
 ## Overview
 
 Collect driving data ( left, right, straight ) which contains 250 features ( road is 10 rows by 25 columns ) and the target for driving instruction.
